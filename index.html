@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cure U Bot | Smart Hospital Robot 💊🩺</title>
+
+    <meta name="description"
+        content="Cure U Bot is a smart hospital robot for medicine delivery and patient monitoring.">
+
+    <meta name="author" content="Graduation Project Team - Faculty of Engineering, Zagazig University">
+
+    <style>
+        /* ===== Global Styles ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            background: linear-gradient(135deg, #e0f7fa, #e3f2fd, #ffffff);
+        }
+
+        /* ===== Main Container ===== */
+        .container {
+            width: 100%;
+            max-width: 1100px;
+            min-height: 600px;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            background: #ffffff;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 80, 120, 0.15);
+        }
+
+        /* ===== Image Section ===== */
+        .image-section {
+            position: relative;
+            min-height: 600px;
+            background: linear-gradient(rgba(0, 70, 110, 0.2),
+                    rgba(0, 70, 110, 0.65)), url("img/img1.jpg");
+
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: flex-end;
+            padding: 45px;
+            color: white;
+        }
+
+        .image-content h1 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .image-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            max-width: 400px;
+            color: #e5faff;
+        }
+
+        .logo {
+            position: absolute;
+            top: 30px;
+            left: 35px;
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* ===== Login Section ===== */
+        .login-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 55px 45px;
+        }
+
+        .welcome {
+            color: #008cba;
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+        }
+
+        .login-section h2 {
+            color: #123b55;
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .description {
+            color: #78909c;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+        }
+
+        /* ===== Form Styles ===== */
+        fieldset {
+            border: none;
+        }
+
+        legend {
+            font-size: 20px;
+            font-weight: bold;
+            color: #164e6b;
+            margin-bottom: 12px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            color: #34566a;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #dce7ed;
+            border-radius: 10px;
+            outline: none;
+            font-size: 14px;
+            background: #f8fbfd;
+            transition: 0.3s ease;
+        }
+
+        input:focus {
+            border-color: #00a6cf;
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(0, 166, 207, 0.1);
+        }
+
+        input::placeholder {
+            color: #aab8c2;
+        }
+
+        /* ===== Submit Button ===== */
+        input[type="submit"] {
+            width: 100%;
+            padding: 15px;
+            margin-top: 10px;
+            background: linear-gradient(135deg, #008cba, #00bcd4);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background: linear-gradient(135deg, #006f98, #0097b2);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 140, 186, 0.25);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+        }
+
+        /* ===== Footer ===== */
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #90a4ae;
+            font-size: 12px;
+        }
+
+        /* ===== Responsive Design ===== */
+        @media (max-width: 850px) {
+            .container {
+                max-width: 550px;
+                grid-template-columns: 1fr;
+            }
+
+            .image-section {
+                min-height: 280px;
+                padding: 30px;
+            }
+
+            .image-content h1 {
+                font-size: 28px;
+            }
+
+            .login-section {
+                padding: 40px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .container {
+                border-radius: 16px;
+            }
+
+            .image-section {
+                min-height: 220px;
+            }
+
+            .image-content h1 {
+                font-size: 23px;
+            }
+
+            .login-section {
+                padding: 30px 22px;
+            }
+
+            .login-section h2 {
+                font-size: 25px;
+            }
+
+            .logo {
+                top: 20px;
+                left: 22px;
+                font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <!-- Image Section -->
+        <section class="image-section">
+
+            <div class="logo">
+                💊 Cure U Bot
+            </div>
+
+            <div class="image-content">
+                <h1>Smart Healthcare,<br>Better Future.</h1>
+
+                <p>
+                    Revolutionizing hospital services with intelligent
+                    medicine delivery, patient monitoring, and smart
+                    automation technology.
+                </p>
+            </div>
+
+        </section>
+
+        <!-- Login Section -->
+        <section class="login-section">
+
+            <p class="welcome">WELCOME BACK 👋</p>
+
+            <h2>Sign In</h2>
+
+            <p class="description">
+                Enter your staff credentials to access
+                the Cure U Bot control dashboard.
+            </p>
+
+            <form action="#" method="post">
+
+                <fieldset>
+
+                    <legend>Sign in to Cure U Bot</legend>
+
+                    <div class="form-group">
+                        <label for="mail">Email Address</label>
+
+                        <input type="email" id="mail" name="email" placeholder="example@gmail.com"
+                            autocomplete="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pass">Password</label>
+
+                        <input type="password" id="pass" name="password" placeholder="Enter your password"
+                            autocomplete="current-password" required>
+                    </div>
+
+                    <input type="submit" value="Sign in to Dashboard →">
+
+                </fieldset>
+
+            </form>
+
+            <div class="footer">
+                © 2026 Cure U Bot | Zagazig University
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+</html>
